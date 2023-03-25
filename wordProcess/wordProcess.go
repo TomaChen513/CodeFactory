@@ -24,6 +24,7 @@ func DataProcessWord(path string) ([]string, error) {
 		if lineStr != "" {
 			arr := strings.Fields(lineStr)
 			res = append(res, arr...)
+			res = append(res, "xxxx")
 		}
 	}
 	return res, nil
@@ -47,6 +48,8 @@ func UniqueStore(words []string) []string {
 	orderedWords,_:=orderMapWord(uniqueMap)
 	return orderedWords
 }
+
+
 
 func orderMapWord(uniqueMap map[string]int) ([]string,[]int) {
 	wordNums:=len(uniqueMap)
