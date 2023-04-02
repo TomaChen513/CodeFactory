@@ -2,12 +2,14 @@ package main
 
 import (
 	// dictsearch "berpa/wordFactory/dictSearch"
-	wordprocess "berpa/wordFactory/wordProcess"
-	"github.com/blevesearch/go-porterstemmer"
+	// wordprocess "berpa/wordFactory/wordProcess"
 	"io"
 	"os"
 	"sort"
 	"strings"
+	"time"
+
+	"github.com/blevesearch/go-porterstemmer"
 
 	"fmt"
 	"io/ioutil"
@@ -20,18 +22,27 @@ import (
 
 
 func main() {
-	words, _ := wordprocess.DataProcessWord("/Users/toma/Projects/wordFactory/source/paragraph.txt")
-	orderWords := wordprocess.UniqueStore(words)
-	fmt.Println(orderWords)
-	// for i := 0; i < len(orderWords); i++ {
-	// 	dictsearch.Query(orderWords[i])
+	// words, _ := wordprocess.DataProcessWord("/Users/toma/Projects/wordFactory/source/paragraph.txt")
+	// orderWords := wordprocess.UniqueStore(words)
+	// fmt.Println(orderWords)
+	// // for i := 0; i < len(orderWords); i++ {
+	// // 	dictsearch.Query(orderWords[i])
+	// // }
+	// for _, word := range words {
+	// 	// queryColor(word)
+	// 	writeHtml(word, queryColor(preProcess(word)))
 	// }
-	for _, word := range words {
-		// queryColor(word)
-		writeHtml(word, queryColor(preProcess(word)))
-	}
-	// writeHtmlByWord(wordClassification(orderWords))
+	// // writeHtmlByWord(wordClassification(orderWords))
 
+	st := time.Now()
+	ch := make(chan bool)
+	go func ()  {
+		time.Sleep(time.Second * 2)
+		<-ch
+	}()
+	ch <- true  // 无缓冲，发送方阻塞直到接收方接收到数据。
+	fmt.Printf("cost %.1f s\n", time.Now().Sub(st).Microseconds())
+	time.Sleep(time.Second * 5)
 }
 
 type Item struct {
