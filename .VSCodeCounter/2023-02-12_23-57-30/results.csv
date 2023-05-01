@@ -1,7 +1,0 @@
-"filename", "language", "Go", "Go Module File", "comment", "blank", "total"
-"/Users/toma/Projects/wordFactory/dictSearch/dictSearch.go", "Go", 66, 0, 32, 4, 102
-"/Users/toma/Projects/wordFactory/go.mod", "Go Module File", 0, 2, 0, 2, 4
-"/Users/toma/Projects/wordFactory/main.go", "Go", 12, 0, 0, 4, 16
-"/Users/toma/Projects/wordFactory/wordProcess/wordProcess.go", "Go", 55, 0, 7, 8, 70
-"/Users/toma/Projects/wordFactory/wordProcess/wordProcess_test.go", "Go", 10, 0, 7, 7, 24
-"Total", "-", 143, 2, 46, 25, 216
